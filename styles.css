@@ -61,3 +61,15 @@ audio { max-width:100%; width:min(100%,440px); }
 }
 @media (min-width:1050px) { .page-shell { width:min(100% - 5rem,1080px); } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+/* Touchstone 4: interactive class finder and inline form feedback */
+.class-finder { border:2px solid var(--terracotta); }
+.finder-fields { display:grid; gap:.5rem 1.25rem; grid-template-columns:1fr; }
+@media(min-width:760px) { .finder-fields { grid-template-columns:1fr 1fr; } .home-page > .class-finder { flex-basis:100%; } }
+.class-result { background:var(--ivory); border-left:5px solid var(--terracotta); padding:1rem 1.25rem; margin-top:1rem; border-radius:.4rem; }
+.class-result[hidden] { display:none; }
+.secondary-button { background:#e9e6df; color:var(--charcoal); border:1px solid var(--charcoal); margin-top:.5rem; }
+.secondary-button:hover { background:#d8d5cd; }
+.field-error { display:block; color:#922b20; font-size:.92rem; font-weight:700; margin:.25rem 0; min-height:0; }
+[aria-invalid="true"] { border:2px solid #922b20 !important; }
+#form-status, #finder-message, #favorite-status { font-weight:600; }

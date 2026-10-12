@@ -7,7 +7,7 @@
 <meta content="Riverbend Yoga Studio offers welcoming yoga classes and workshops for all experience levels." name="description"/>
 <title>Workshops and Requests | Riverbend Yoga Studio</title>
 <link href="styles.css" rel="stylesheet"/>
-</head>
+<script defer="True" src="script.js"></script></head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a><header class="site-header">
 <a class="brand" href="index.html"><img alt="Riverbend Yoga Studio logo" class="brand-logo" src="yoga-logo_c.png" width="180"/></a>
@@ -17,21 +17,21 @@
 <h1>Workshops and Class Requests</h1>
 <section class="info-card"><h2>Monthly Workshops</h2><p>Workshop topics may include beginner foundations, mindful breathing, gentle mobility, and restorative practice. Contact us for this month's dates and available spaces.</p></section>
 <section class="info-card"><h2>Guided Breathing</h2><p>Listen to a short guided breathing message to get a feel for our calm, supportive approach.</p><audio aria-label="Riverbend Yoga Studio guided welcome recording" controls="" preload="none"><source src="yoga-breathing_c.mp3" type="audio/mpeg"/>Your browser does not support audio playback. Contact the studio to ask about guided breathing sessions.</audio><p>If the audio does not play, you can <a href="yoga-breathing_c.mp3">open the guided breathing recording</a> directly.</p></section>
-<section class="info-card"><h2>Request a Spot or Ask a Question</h2><p>This sample form shows the information the studio would collect; it does not send a live request.</p>
-<form action="#request-form" class="interest-form" id="request-form" method="get">
+<section class="info-card"><h2>Request a Spot or Ask a Question</h2><p>This demonstration checks your request details on this device. It does not send your information to the studio.</p>
+<form action="#request-form" class="interest-form" id="request-form" method="get" novalidate="novalidate">
 <fieldset><legend>Your Contact Information</legend>
-<p><label for="name">Full name</label> <input autocomplete="name" id="name" minlength="2" name="name" required="" type="text"/></p>
-<p><label for="email">Email address</label> <input autocomplete="email" id="email" name="email" required="" type="email"/></p>
+<p><label for="name">Full name</label> <input aria-describedby="name-error" autocomplete="name" id="name" minlength="2" name="name" required="" type="text"/><span aria-live="polite" class="field-error" id="name-error"></span></p>
+<p><label for="email">Email address</label> <input aria-describedby="email-error" autocomplete="email" id="email" name="email" required="" type="email"/><span aria-live="polite" class="field-error" id="email-error"></span></p>
 </fieldset>
 <fieldset><legend>Class and Workshop Interest</legend>
-<p><label for="interest">What interests you?</label> <select id="interest" name="interest" required=""><option value="">Choose an option</option><option value="gentle">Gentle Yoga</option><option value="vinyasa">Vinyasa Flow</option><option value="restorative">Restorative Yoga</option><option value="private">Private Session</option><option value="workshop">Monthly Workshop</option></select></p>
-<p><label for="experience">Experience level</label> <select id="experience" name="experience" required=""><option value="">Choose an option</option><option value="beginner">Beginner</option><option value="some">Some experience</option><option value="experienced">Experienced</option></select></p>
-<p>Preferred contact method:</p><p class="radio-choice"><input id="contact-email" name="contact_method" required="" type="radio" value="email"/><label for="contact-email">Email</label></p><p class="radio-choice"><input id="contact-phone" name="contact_method" type="radio" value="phone"/><label for="contact-phone">Phone</label></p>
-<p><label for="phone">Phone number (if you prefer a call)</label> <input id="phone" name="phone" pattern="[0-9()+. -]{7,20}" title="Enter a phone number using 7 to 20 digits or common phone symbols" type="tel"/></p>
-<p><label for="message">Your message</label><br/><textarea cols="45" id="message" minlength="10" name="message" required="" rows="5"></textarea></p>
+<p><label for="interest">What interests you?</label> <select aria-describedby="interest-error" id="interest" name="interest" required=""><option value="">Choose an option</option><option value="gentle">Gentle Yoga</option><option value="vinyasa">Vinyasa Flow</option><option value="restorative">Restorative Yoga</option><option value="private">Private Session</option><option value="workshop">Monthly Workshop</option><option value="athletes">Yoga for Athletes</option></select><span aria-live="polite" class="field-error" id="interest-error"></span></p>
+<p><label for="experience">Experience level</label> <select aria-describedby="experience-error" id="experience" name="experience" required=""><option value="">Choose an option</option><option value="beginner">Beginner</option><option value="some">Some experience</option><option value="experienced">Experienced</option></select><span aria-live="polite" class="field-error" id="experience-error"></span></p>
+<p>Preferred contact method:</p><p class="radio-choice"><input id="contact-email" name="contact_method" required="" type="radio" value="email"/><label for="contact-email">Email</label></p><p class="radio-choice"><input id="contact-phone" name="contact_method" type="radio" value="phone"/><label for="contact-phone">Phone</label></p><span aria-live="polite" class="field-error" id="contact-method-error"></span>
+<p><label for="phone">Phone number (if you prefer a call)</label> <input aria-describedby="phone-error" id="phone" name="phone" pattern="[0-9()+. -]{7,20}" title="Enter a phone number using 7 to 20 digits or common phone symbols" type="tel"/><span aria-live="polite" class="field-error" id="phone-error"></span></p>
+<p><label for="message">Your message</label><br/><textarea aria-describedby="message-error" cols="45" id="message" minlength="10" name="message" required="" rows="5"></textarea><span aria-live="polite" class="field-error" id="message-error"></span></p>
 </fieldset>
-<button type="submit">Check Request Details</button>
-</form>
+<button type="submit">Check request details</button>
+<p aria-live="polite" id="form-status" role="status"></p></form>
 </section>
 </main>
 <footer class="site-footer">
